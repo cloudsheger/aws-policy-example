@@ -1,0 +1,89 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CustomDashboardPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutDashboard"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CustomMetricPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricData"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchAgentServerPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand",
+        "ssm:GetCommandInvocation",
+        "ssm:ListCommandInvocations",
+        "ec2:DescribeInstances",
+        "ec2:CreateTags",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "ssm:UpdateInstanceInformation",
+        "ssm:CreateAssociation",
+        "ssm:DescribeAssociation",
+        "ssm:DeleteAssociation",
+        "ssm:ListAssociations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CollectDAgentServerPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand",
+        "ssm:GetCommandInvocation",
+        "ssm:ListCommandInvocations",
+        "ec2:DescribeInstances",
+        "ec2:CreateTags",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "cloudwatch:PutMetricData",
+        "ssm:UpdateInstanceInformation",
+        "ssm:CreateAssociation",
+        "ssm:DescribeAssociation",
+        "ssm:DeleteAssociation",
+        "ssm:ListAssociations"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "EmailAlertPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:PutMetricAlarm",
+        "cloudwatch:DescribeAlarms",
+        "ses:SendEmail",
+        "sns:CreateTopic",
+        "sns:Subscribe",
+        "sns:Publish"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchAgentAdminPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:PutParameter",
+        "ssm:GetParameter",
+        "ssm:GetParametersByPath",
+        "ssm:DeleteParameter",
+        "ssm:ListTagsForResource",
+        "ssm:AddTagsToResource",
+        "ssm:RemoveTagsFromResource"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
